@@ -1,0 +1,91 @@
+{
+  "name": "user-service",
+  "version": "1.0.0",
+  "description": "A microservice responsible for user authentication and management, including user registration, login, and authentication token handling using JWT. It integrates with MongoDB for user data storage and follows a modular architecture using Express.js.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "userService": {
+    "features": {
+      "authentication": "Handles user registration, login, and authentication using JWT.",
+      "authorization": "Ensures secure access to protected routes using middleware.",
+      "database": "Stores user data securely in MongoDB using Mongoose models.",
+      "routing": "Defines Express routes for user-related operations such as sign-up, login, and profile management.",
+      "password_security": "Hashes passwords using bcrypt for enhanced security.",
+      "configuration": "Manages environment variables and configurations using dotenv.",
+      "message_broker": "Implements RabbitMQ for asynchronous communication with other services (optional)."
+    },
+    "technologies": {
+      "backend": [
+        "Node.js",
+        "Express.js"
+      ],
+      "database": [
+        "MongoDB",
+        "Mongoose"
+      ],
+      "authentication": [
+        "JWT",
+        "bcrypt"
+      ],
+      "messaging": [
+        "RabbitMQ (optional)"
+      ],
+      "configuration": [
+        ".env",
+        "dotenv"
+      ]
+    },
+    "structure": {
+      "config": "Stores application-level configurations.",
+      "controllers": "Handles business logic for authentication and user management.",
+      "services": "Encapsulates reusable service logic such as messaging and authentication.",
+      "database": {
+        "models": "Contains the MongoDB user model using Mongoose.",
+        "connection": "Handles MongoDB connection logic."
+      },
+      "middleware": "Includes authentication and request validation middleware.",
+      "routes": "Defines Express routes for user-related operations.",
+      "utils": "Provides helper functions for token generation and password handling.",
+      "server": "Bootstraps the Express application and configures middleware."
+    }
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "authentication",
+    "jwt",
+    "bcrypt",
+    "microservice",
+    "rest-api",
+    "user-authentication",
+    "user-management",
+    "mongoose",
+    "rabbitmq",
+    "docker",
+    "typescript",
+    "api-security"
+  ],
+  "author": "Vinod Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "@types/amqplib": "^0.10.6",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/validator": "^13.12.2",
+    "amqplib": "^0.10.5",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "validator": "^13.12.0"
+  }
+}
