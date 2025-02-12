@@ -26,4 +26,9 @@ const encryptPassword = async (password: string) => {
     return encryptedPassword;
 };
 
-export { ApiError, encryptPassword }
+const isPasswordMatch = async (password: string, userPassword: string) => {
+    const result = await bcrypt.compare(password, userPassword);
+    return result;
+};
+
+export { ApiError, encryptPassword, isPasswordMatch}
