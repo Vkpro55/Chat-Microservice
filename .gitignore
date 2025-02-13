@@ -5,3 +5,5 @@
 /user-service/.env
 /chat-service/.env
 /chat-service/node_modules
+/notification-service/node_modules
+/notification-service/.env
