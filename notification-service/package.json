@@ -1,0 +1,80 @@
+  {
+    "name": "notification-service",
+    "version": "1.0.0",
+    "description": "A microservice responsible for handling real-time notifications for the chat application. It supports email, push notifications, and messaging queue integration to ensure seamless communication.",
+    "main": "server.js",
+    "scripts": {
+      "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
+      "build": "rm -rf build/ && tsc -p .",
+      "start": "cross-env NODE_ENV=production nodemon build/server.js"
+    },
+    "notificationService": {
+      "features": {
+        "real_time_notifications": "Handles real-time notifications for messages, mentions, and alerts.",
+        "email_notifications": "Sends email notifications for important updates using Nodemailer.",
+        "push_notifications": "Integrates with Firebase Cloud Messaging (FCM) for push notifications.",
+        "message_broker": "Uses RabbitMQ for asynchronous communication between microservices.",
+        "configuration": "Manages environment variables and configurations using dotenv."
+      },
+      "technologies": {
+        "backend": [
+          "Node.js",
+          "Express.js"
+        ],
+        "messaging": [
+          "RabbitMQ"
+        ],
+        "email": [
+          "Nodemailer"
+        ],
+        "push_notifications": [
+          "Firebase Cloud Messaging (FCM)"
+        ],
+        "configuration": [
+          ".env",
+          "dotenv"
+        ]
+      },
+      "structure": {
+        "config": "Stores application-level configurations.",
+        "controllers": "Handles business logic for sending notifications.",
+        "services": "Encapsulates reusable service logic for email and push notifications.",
+        "database": "(Optional) Could store notification logs if needed.",
+        "middleware": "Includes validation and request processing middleware.",
+        "routes": "Defines Express routes for managing notifications.",
+        "utils": "Provides helper functions for email, push notifications, and message queuing.",
+        "server": "Bootstraps the Express application and configures middleware."
+      }
+    },
+    "keywords": [
+      "nodejs",
+      "express",
+      "rabbitmq",
+      "notifications",
+      "email",
+      "push-notifications",
+      "microservice",
+      "firebase",
+      "nodemailer",
+      "typescript"
+    ],
+    "author": "Vinod Kumar",
+    "license": "ISC",
+    "dependencies": {
+      "@types/amqplib": "^0.10.6",
+      "@types/express": "^5.0.0",
+      "@types/nodemailer": "^6.4.17",
+      "amqplib": "^0.10.5",
+      "dotenv": "^16.4.7",
+      "express": "^4.21.2",
+      "firebase-admin": "^13.1.0",
+      "nodemailer": "^6.10.0",
+      "nodemon": "^3.1.9",
+      "sib-api-v3-typescript": "^2.2.2",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.7.3"
+    },
+    "devDependencies": {
+      "cross-env": "^7.0.3"
+    }
+  }
