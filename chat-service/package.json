@@ -1,0 +1,93 @@
+{
+  "name": "chat-service",
+  "version": "1.0.0",
+  "description": "A microservice responsible for real-time messaging between users. It uses WebSockets for instant communication, RabbitMQ for message queuing, and MongoDB for storing chat history. The service is built with Node.js, Express.js, and follows a modular architecture.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
+    "build": "rm -rf build/ && tsc -p .",
+    "start": "cross-env NODE_ENV=production nodemon build/server.js"
+  },
+  "chatService": {
+    "features": {
+      "real_time_messaging": "Enables instant messaging using WebSockets and Socket.IO.",
+      "message_queuing": "Uses RabbitMQ for asynchronous message handling and delivery.",
+      "database": "Stores chat history and user conversations in MongoDB using Mongoose.",
+      "authentication": "Secures chat access with JWT-based authentication.",
+      "message_persistence": "Ensures message delivery and storage for offline users.",
+      "scalability": "Designed to support multiple users and handle high traffic efficiently.",
+      "configuration": "Manages environment variables and settings using dotenv."
+    },
+    "technologies": {
+      "backend": [
+        "Node.js",
+        "Express.js"
+      ],
+      "real_time_communication": [
+        "WebSockets",
+        "Socket.IO"
+      ],
+      "database": [
+        "MongoDB",
+        "Mongoose"
+      ],
+      "authentication": [
+        "JWT"
+      ],
+      "messaging": [
+        "RabbitMQ"
+      ],
+      "configuration": [
+        ".env",
+        "dotenv"
+      ]
+    },
+    "structure": {
+      "config": "Stores environment variables and service configurations.",
+      "controllers": "Manages real-time chat functionality and API endpoints.",
+      "services": "Encapsulates reusable service logic such as WebSocket handling and messaging.",
+      "database": {
+        "models": "Defines the MongoDB chat message schema using Mongoose.",
+        "connection": "Handles MongoDB connection logic."
+      },
+      "middleware": "Includes authentication and request validation middleware.",
+      "routes": "Defines Express routes for chat-related operations.",
+      "utils": "Provides helper functions for WebSocket events and token handling.",
+      "server": "Bootstraps the Express application and sets up Socket.IO integration."
+    }
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "socket.io",
+    "mongodb",
+    "real-time-chat",
+    "websockets",
+    "microservice",
+    "rabbitmq",
+    "messaging",
+    "typescript",
+    "chat-application"
+  ],
+  "author": "Vinod Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "@types/amqplib": "^0.10.6",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/uuid": "^10.0.0",
+    "amqplib": "^0.10.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9",
+    "socket.io": "^4.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
