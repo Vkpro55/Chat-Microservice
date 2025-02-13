@@ -41,6 +41,32 @@ const validateReceiver = (senderId: string, receiverId: string) => {
     }
 };
 
+const getConversation = async (req: AuthRequest, res: Response) => {
+    try {
+        const { receiverId } = req.params;
+        const senderId = req.user._id;
+
+        const messages = await Message.find({
+            $or: [
+                { senderId, receiverId },
+                { senderId: receiverId, receiverId: senderId },
+            ],
+        });
+
+        return res.json({
+            status: 200,
+            message: "Messages retrieved successfully!",
+            data: messages,
+        });
+    } catch (error: any) {
+        return res.json({
+            status: 500,
+            message: error.message,
+        });
+    }
+};
+
 export default {
     send,
+    getConversation
 };
