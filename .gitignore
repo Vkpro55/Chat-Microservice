@@ -1,3 +1,7 @@
 /node_modules
 /.env
 /build
+/user-service/node_modules
+/user-service/.env
+/chat-service/.env
+/chat-service/node_modules
