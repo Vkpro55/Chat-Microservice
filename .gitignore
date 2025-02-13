@@ -7,3 +7,4 @@
 /chat-service/node_modules
 /notification-service/node_modules
 /notification-service/.env
+/gateway/node_modules

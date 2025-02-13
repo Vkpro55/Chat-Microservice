@@ -1,0 +1,72 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "An API Gateway responsible for reverse proxy, request routing, authentication, and load balancing between microservices. It acts as a single entry point for client requests, forwarding them to the appropriate microservices.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env nodemon src/index.ts"
+  },
+  "gatewayService": {
+    "features": {
+      "reverse_proxy": "Handles reverse proxying to microservices, ensuring smooth communication.",
+      "request_routing": "Routes incoming requests to respective services based on URL paths.",
+      "authentication": "Handles authentication and authorization logic before forwarding requests.",
+      "load_balancing": "Distributes traffic evenly among instances of microservices.",
+      "rate_limiting": "Implements rate limiting to prevent abuse and enhance security.",
+      "logging": "Captures logs for monitoring and debugging API requests.",
+      "caching": "Implements caching mechanisms to optimize performance."
+    },
+    "technologies": {
+      "backend": [
+        "Node.js",
+        "Express.js"
+      ],
+      "proxy": [
+        "express-http-proxy"
+      ],
+      "security": [
+        "JWT",
+        "Rate Limiting"
+      ],
+      "configuration": [
+        ".env",
+        "dotenv"
+      ]
+    },
+    "structure": {
+      "config": "Stores application-level configurations.",
+      "middleware": "Includes authentication and request validation middleware.",
+      "routes": "Defines Express routes for proxying API requests.",
+      "services": "Encapsulates logic for request transformation and security handling.",
+      "server": "Bootstraps the Express application and configures middleware."
+    }
+  },
+  "keywords": [
+    "api-gateway",
+    "reverse-proxy",
+    "nodejs",
+    "express",
+    "microservices",
+    "jwt",
+    "load-balancing",
+    "rate-limiting",
+    "security",
+    "typescript"
+  ],
+  "author": "Vinod Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/express-http-proxy": "^1.6.6",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-http-proxy": "^2.1.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
